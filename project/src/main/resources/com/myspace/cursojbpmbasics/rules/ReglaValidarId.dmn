@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_AF98AA80-4AEF-4ED3-BA6C-1CE46E559B01" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_F98DEA83-1B4E-4F7F-9B92-7A04A0673F1E" name="ReglaValidarId" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_AF98AA80-4AEF-4ED3-BA6C-1CE46E559B01">
+  <dmn:extensionElements/>
+  <dmn:itemDefinition id="_F0A43724-43B1-4C47-BC38-D5D7B0765706" name="persona" isCollection="false">
+    <dmn:typeRef>Any</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:decision id="_5D2948DE-37A7-4371-920B-9B3F6EFEBBFB" name="EvaluarTipoId">
+    <dmn:variable id="_B6D8BB14-F656-4339-BD3B-EC6D15A3D557" name="EvaluarTipoId" typeRef="string"/>
+    <dmn:informationRequirement id="_722DC3F5-66C4-465E-9CDD-5F8ABFE2A488">
+      <dmn:requiredInput href="#_CFDBCBBC-A0B1-41E5-AF77-76C90A1AFA00"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_9FF652AF-56E8-4919-8E72-34B3176D7CB1" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_FD26977A-EA2A-4F6C-B5FD-6FA0FEB69685">
+        <dmn:inputExpression id="_B3C2EB3F-3E58-4229-B291-33AEA6BAB5EC" typeRef="string">
+          <dmn:text>tipoId</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_78453C62-ACCA-4332-9859-DC0D46E281F4"/>
+      <dmn:rule id="_3F4B894A-7B2D-4D27-B3A6-B715308C09DE">
+        <dmn:description>Cédula ciudadania</dmn:description>
+        <dmn:inputEntry id="_D93DA346-F840-4A9E-A8BE-842190FD1A8F">
+          <dmn:text>"CC"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_9FE8A8B7-902C-4329-8B86-B9EBE3EA4A80">
+          <dmn:text>"CC"</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="_BE9A5F9E-C8B1-42AC-8B49-7CDB132EA091">
+        <dmn:description>Tarjeta Identntida</dmn:description>
+        <dmn:inputEntry id="_1801EA56-C204-4EFB-95BF-16E2345C325D">
+          <dmn:text>"TI"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_5FBCAFCB-FB89-47E2-91EE-61865052A11B">
+          <dmn:text>"TI"</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="_C5CEA311-4A03-41A7-8E4C-8FBA221E5A57">
+        <dmn:description>Pasaporte</dmn:description>
+        <dmn:inputEntry id="_CE0281B1-BC1A-48C2-B4A9-E614BF9AD5B1">
+          <dmn:text>"PA"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_3B83A2E3-A0E3-4942-8A66-95886FF5DDD9">
+          <dmn:text>"PA"</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="_9C48600A-76B9-442A-824C-087DAC1E2398">
+        <dmn:description>No Aplica</dmn:description>
+        <dmn:inputEntry id="_82E9E632-823C-4134-B94F-559FD56EB5E4">
+          <dmn:text>"NA"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_7F52D30F-1907-4C7C-8DD6-11D8F4C51326">
+          <dmn:text>"NA"</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmn:inputData id="_CFDBCBBC-A0B1-41E5-AF77-76C90A1AFA00" name="tipoId">
+    <dmn:variable id="_69214409-A012-4E63-9A56-E0E12430DB4B" name="tipoId" typeRef="string"/>
+  </dmn:inputData>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_9FF652AF-56E8-4919-8E72-34B3176D7CB1">
+            <kie:width>50.0</kie:width>
+            <kie:width>199.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>179.0</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-_5D2948DE-37A7-4371-920B-9B3F6EFEBBFB" dmnElementRef="_5D2948DE-37A7-4371-920B-9B3F6EFEBBFB" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="329" y="157" width="102" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_CFDBCBBC-A0B1-41E5-AF77-76C90A1AFA00" dmnElementRef="_CFDBCBBC-A0B1-41E5-AF77-76C90A1AFA00" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="329" y="35" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-_722DC3F5-66C4-465E-9CDD-5F8ABFE2A488" dmnElementRef="_722DC3F5-66C4-465E-9CDD-5F8ABFE2A488">
+        <di:waypoint x="429" y="60"/>
+        <di:waypoint x="329" y="182"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
