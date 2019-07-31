@@ -1,0 +1,49 @@
+package com.myspace.cursojbpmbasics.rules.rule_person;
+
+import com.myspace.cursojbpmbasics.model.bo.Persona;
+import com.myspace.cursojbpmbasics.model.dto.DecisionVista;
+
+rule "validar edad"
+no-loop true
+ruleflow-group "reglas persona"
+when 
+$p: Persona (edad <18)
+$v: DecisionVista()
+
+    then
+    modify($v){
+        setDecision(true)
+    }
+    modify($p){
+        setPrimerNombre("NOAPLICA"),
+        setSegundoNombre("NOAPLICA"),
+        setPrimerApellido("NOAPLICA"),
+        setSegundoApellido("NOAPLICA")
+    }
+    
+end
+
+rule "nombre != Test"
+no-loop true
+ruleflow-group "reglas persona"
+when 
+$p: Persona (primerNombre != "Test")
+
+    then
+    System.out.println("Nombres: "+ $p.getPrimerNombre() +" "+ $p.getSegundoNombre());
+    System.out.println("Apellidos: "+ $p.getPrimerApellido() +" "+ $p.getSegundoApellido());
+
+end
+
+
+rule "nombre = Test"
+no-loop true
+ruleflow-group "reglas persona"
+
+when $p: Persona (primerNombre == "Test")
+
+    then
+    System.out.println("Nombre: "+ $p.getPrimerNombre()); 
+
+end
+    
