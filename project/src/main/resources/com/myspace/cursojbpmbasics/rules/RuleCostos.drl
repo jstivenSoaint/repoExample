@@ -1,0 +1,20 @@
+package com.myspace.cursojbpmbasics.rules;
+
+import com.myspace.cursojbpmbasics.model.bo.Costos;
+
+
+
+rule "valida costo"
+no-loop
+ruleflow-group "regla costo"
+when 
+    $c: Costos(costo > 5000)
+then
+ modify($c){
+        setValor(5000)
+    }
+    modify($c){
+        setValor($c.getCosto()-$c.getValor())
+    }
+    
+end

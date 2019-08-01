@@ -12,9 +12,15 @@
     <work-item-handlers>
         <work-item-handler>
             <resolver>mvel</resolver>
-            <identifier>new org.jbpm.process.workitem.email.EmailWorkItemHandler("aleal@soaint.com","587","jstiven@soaint.com","Titulo","true")</identifier>
+            <identifier>new org.jbpm.process.workitem.email.EmailWorkItemHandler("smtp.gmail.com","587","pruebasdeconcepto2019@gmail.com","Pruebas_2019","true")</identifier>
             <parameters/>
-            <name>emailHandler</name>
+            <name>Email</name>
+        </work-item-handler>
+        <work-item-handler>
+            <resolver>mvel</resolver>
+            <identifier>new org.jbpm.process.workitem.bpmn2.ServiceTaskHandler(ksession, classLoader)</identifier>
+            <parameters/>
+            <name>Service Task</name>
         </work-item-handler>
     </work-item-handlers>
     <environment-entries/>

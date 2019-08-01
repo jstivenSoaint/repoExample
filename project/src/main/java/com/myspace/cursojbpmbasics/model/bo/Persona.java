@@ -18,14 +18,14 @@ public class Persona implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Segundo Apellido")
 	private java.lang.String segundoApellido;
 
-	@org.kie.api.definition.type.Label("edad")
+	@org.kie.api.definition.type.Label("Edad")
 	private int edad;
 
-	@org.kie.api.definition.type.Label(value = "Tipo id")
-	private java.lang.String tipoId;
+	@org.kie.api.definition.type.Label(value = "Tipo ID")
+	private java.lang.String tipoid;
 
-	@org.kie.api.definition.type.Label(value = "Número id")
-	private java.lang.String numeroId;
+	@org.kie.api.definition.type.Label(value = "Numero ID")
+	private int numeroid;
 
 	public Persona() {
 	}
@@ -70,33 +70,37 @@ public class Persona implements java.io.Serializable {
 		this.edad = edad;
 	}
 
-	public java.lang.String getTipoId() {
-		return this.tipoId;
+	public java.lang.String getTipoid() {
+		return this.tipoid;
 	}
 
-	public void setTipoId(java.lang.String tipoId) {
-		this.tipoId = tipoId;
+	public void setTipoid(java.lang.String tipoid) {
+		this.tipoid = tipoid;
 	}
 
-	public java.lang.String getNumeroId() {
-		return this.numeroId;
+	public int getNumeroid() {
+		return this.numeroid;
 	}
 
-	public void setNumeroId(java.lang.String numeroId) {
-		this.numeroId = numeroId;
+	public void setNumeroid(int numeroid) {
+		this.numeroid = numeroid;
 	}
 
 	public Persona(java.lang.String primerNombre,
 			java.lang.String segundoNombre, java.lang.String primerApellido,
 			java.lang.String segundoApellido, int edad,
-			java.lang.String tipoId, java.lang.String numeroId) {
+			java.lang.String tipoid, int numeroid) {
 		this.primerNombre = primerNombre;
 		this.segundoNombre = segundoNombre;
 		this.primerApellido = primerApellido;
 		this.segundoApellido = segundoApellido;
 		this.edad = edad;
-		this.tipoId = tipoId;
-		this.numeroId = numeroId;
+		this.tipoid = tipoid;
+		this.numeroid = numeroid;
 	}
 
+	@Override
+	public String toString() {
+		return "Persona: "+ getPrimerNombre()+" "+getSegundoNombre()+" " +getPrimerApellido()+" "+getSegundoApellido();
+	}
 }

@@ -1,0 +1,39 @@
+package com.myspace.cursojbpmbasics.rules;
+
+import com.myspace.cursojbpmbasics.model.bo.Persona;
+
+rule "valida edad"
+no-loop true
+ruleflow-group "regla persona"
+when 
+    $p: Persona(edad < 18)
+then
+    modify($p){
+        setPrimerNombre("NOAPLICA"),
+        setSegundoNombre("NOAPLICA"),
+        setPrimerApellido("NOAPLICA"),
+        setSegundoApellido("NOAPLICA")
+    }
+end
+
+rule "valida nombre"
+no-loop
+ruleflow-group "regla persona"
+when 
+    $p: Persona(primerNombre != "Test")
+then
+    System.out.println("nombre:" + $p.getPrimerNombre() + "Apellido: " +$p.getPrimerApellido());
+end
+
+
+rule "valida nombre2"
+no-loop
+ruleflow-group "regla persona"
+when 
+    $p: Persona(primerNombre == "Test");
+then
+
+    System.out.println("nombre: " + $p.getPrimerNombre());
+end
+
+
